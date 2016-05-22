@@ -62,15 +62,18 @@ public class GerenciadorDeJogos {
 		}		
 	}
 	
-	public void verificaChute(String chute) throws ExcecaoPalavraErrada{
-		
+	public boolean verificaChute(String chute) {
+		int j = 0;
 		for (int i = 0; i < palavras.size(); i++) {
-			if(palavras.get(i).equals(chute))
-				System.out.println("você acertou!");
-			else
-				throw new ExcecaoPalavraErrada();
-		}
-		
+			if(palavras.get(i).equals(chute)){
+				j = 1;
+				break;
+			}
+		}	
+		if(j == 1)
+			return true;
+		else
+			return false;
 	}
 	
 	public GerenciadorDeAnagramas getGerenciaAnagramas() {
