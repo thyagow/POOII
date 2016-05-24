@@ -11,10 +11,15 @@ import java.util.List;
 
 
 
+
+
+
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import modelo.Palavra;
@@ -25,17 +30,113 @@ import modelo.PalavraCom6Letras;
 
 public class JanelaJogo extends JFrame {
 	
-	private JTextField putChute, put;
+	private JTextField put;
+	private JTextField putChute;
 	private List<JTextField> listaDeEspacos;
+	private List<JButton> listaDeBotoes;
 	private JButton chute;
 	private JLabel texto;
 	private List<Palavra> palavras;
+	private boolean resp;
 	
 	public JanelaJogo(int numPalavras, List<Palavra> palavras) {				
 		this.palavras = new ArrayList<Palavra>(palavras);
 		listaDeEspacos = new ArrayList<JTextField>();
+		listaDeBotoes = new ArrayList<JButton>();
+	}
+	
+	public void criaJanelaBotoesEstrategia() {
 		setLayout(null);
 		criaBotoes();
+		configuraJanela();
+	}
+
+	private void criaBotoes() {	
+		botao1();
+		botao2();
+		botao3();
+		botao4();
+		botao5();
+		botao6();
+		botao7();
+		botao8();
+		botao9();
+	}
+
+	private void botao9() {
+		chute = new JButton("Jogo 9");
+		chute.setSize(100, 50);
+		chute.setLocation(290, 650);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);
+	}
+
+	private void botao8() {
+		chute = new JButton("Jogo 8");
+		chute.setSize(100, 50);
+		chute.setLocation(290, 450);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao7() {
+		chute = new JButton("Jogo 7");
+		chute.setSize(100, 50);
+		chute.setLocation(290, 250);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao6() {
+		chute = new JButton("Jogo 6");
+		chute.setSize(100, 50);
+		chute.setLocation(290, 50);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao5() {
+		chute = new JButton("Jogo 5");
+		chute.setSize(100, 50);
+		chute.setLocation(110, 650);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao4() {
+		chute = new JButton("Jogo 4");
+		chute.setSize(100, 50);
+		chute.setLocation(110, 450);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao3() {
+		chute = new JButton("Jogo 3");
+		chute.setSize(100, 50);
+		chute.setLocation(110, 250);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao2() {
+		chute = new JButton("Jogo 2");
+		chute.setSize(100, 50);
+		chute.setLocation(110, 50);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	private void botao1() {
+		chute = new JButton("Jogo 1");
+		chute.setSize(100, 50);
+		chute.setLocation(200, 350);
+		listaDeBotoes.add(chute);
+		getContentPane().add(chute);		
+	}
+
+	public void criaJanelaJogo(List<Palavra> palavras) {
+		setLayout(null);		
 		criaEtiqueta(palavras);
 		criaAreasDeTextoNaoDigitavel();
 		criaCaixaDeTexto();		
@@ -43,9 +144,9 @@ public class JanelaJogo extends JFrame {
 	}
 	
 	private void criaEtiqueta(List<Palavra> palavras) {
-		texto = new JLabel("Tente acertar todas as palavras para ganhar o jogo!");
+		texto = new JLabel("- Tente acertar todas as palavras para ganhar o jogo!");
 		texto.setSize(300, 30);
-		texto.setLocation(50, 20);
+		texto.setLocation(80, 20);
 		getContentPane().add(texto);
 		criaEtiquetaComLetras(palavras);
 	}
@@ -61,9 +162,9 @@ public class JanelaJogo extends JFrame {
 			}
 		}
 		letras = criaLetrasDica(Aux);
-		texto = new JLabel("as letras que devem ser usadas são:  "+letras);
+		texto = new JLabel("- As letras que devem ser usadas são:  "+letras);
 		texto.setSize(450, 30);
-		texto.setLocation(30, 50);
+		texto.setLocation(80, 50);
 		getContentPane().add(texto);
 	}
 	
@@ -104,7 +205,7 @@ public class JanelaJogo extends JFrame {
 			AuxH += 50;
 			put = new JTextField();
 			put.setSize(100, 30);
-			put.setLocation(320, AuxH);
+			put.setLocation(290, AuxH);
 			put.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 			put.setEditable(false);
 			getContentPane().add(put);
@@ -117,7 +218,7 @@ public class JanelaJogo extends JFrame {
 			AuxH += 50;
 			put = new JTextField();
 			put.setSize(100, 30);
-			put.setLocation(120, AuxH);
+			put.setLocation(90, AuxH);
 			put.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 			put.setEditable(false);
 			getContentPane().add(put);
@@ -125,57 +226,39 @@ public class JanelaJogo extends JFrame {
 		}		
 	}
 	
-	public void respostaBotaoChute(boolean resp) {
-		if(getContentPane().getComponentAt(220, 800) == texto)
+private class TrataBotaoDeChute implements ActionListener {		
+	
+	public void actionPerformed(ActionEvent e) {			
+		for (int i = 0; i < palavras.size(); i++) {
+			resp = false;			
+			if(palavras.get(i).equals(putChute.getText())){
+				listaDeEspacos.get(i).setText(putChute.getText());
+				resp = true;
+				break;
+			}
+		}	
+		if(getContentPane().getComponentAt(220, 150) == texto)
 			getContentPane().remove(texto);
-		
-		acertouOChute(resp);
-		errouOChute(resp);
-	}
-
-	private void acertouOChute(boolean resp) {
-		if(resp == true){
-			texto = new JLabel("Você Acertou! Continue Assim!");
-			texto.setSize(150, 30);
-			texto.setLocation(220, 800);
-			getContentPane().add(texto);
-		}
-	}
-
-	private void errouOChute(boolean resp) {
+	
 		if(resp == false){
-			texto = new JLabel("Você Errou. Continue Tentando!");
-			texto.setSize(150, 30);
-			texto.setLocation(220, 800);
-			getContentPane().add(texto);
+			JOptionPane.showMessageDialog(null, "Você Errou. Continue Tentando!");
 		}
 	}
-	
-	private void criaBotoes() {
-		chute = new JButton("Chutar");
-		chute.setSize(80, 30);
-		chute.setLocation(240, 100);
-		getContentPane().add(chute);
-		chute.addActionListener(new TrataBotaoDeChute());
-	}
-	
+}
+
 	private void criaCaixaDeTexto() {
 		putChute = new JTextField();
 		putChute.setSize(100, 30);
-		putChute.setLocation(120, 100);		
-		getContentPane().add(putChute);		
+		putChute.setLocation(190, 100);		
+		getContentPane().add(putChute);
+		putChute.addActionListener(new TrataBotaoDeChute());
 	}
 	
 	private void configuraJanela() {		
 		this.setTitle("Jogo de Anagramas");	
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-		this.setSize(550, 800);			
+		this.setSize(500, 800);
+		this.setLocation(420, 50);
 		this.setVisible(true);		
 	}
-
-	public String getChute() {
-		return putChute.getText();
-	}
-	
-	
 }

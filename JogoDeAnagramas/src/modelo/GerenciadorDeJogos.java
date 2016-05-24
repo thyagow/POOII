@@ -1,10 +1,15 @@
 package modelo;
 
 
+import interfaces.EstrategiaGameSet;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
+import visao.JanelaJogo;
 import excecoes.ExcecaoPalavraErrada;
 
 public class GerenciadorDeJogos {
@@ -13,17 +18,16 @@ public class GerenciadorDeJogos {
 	private List<Palavra> palavras;	
 	private Palavra palavra;
 	private String letras;	
-	
+	private JanelaJogo janela;
 
 	public GerenciadorDeJogos() {
 		gerenciaAnagramas = new GerenciadorDeAnagramas();		
-		palavras = new ArrayList<Palavra>();
-		
+		palavras = new ArrayList<Palavra>();		
 	}
 	
-	public void criaListaDePalavras() {
+	public void criaListaDePalavras(EstrategiaGameSet estrategia) {
 		
-		List<String> palavras = gerenciaAnagramas.comecaNovoJogo();
+		List<String> palavras = estrategia.pegaJogo();
 		letras = palavras.get(0);
 		
 		for (int i = 0; i < palavras.size(); i++) {
@@ -61,21 +65,7 @@ public class GerenciadorDeJogos {
 			System.out.println("- " + palavras.get(i).toString() + ".");
 		}		
 	}
-	
-	public boolean verificaChute(String chute) {
-		int j = 0;
-		for (int i = 0; i < palavras.size(); i++) {
-			if(palavras.get(i).equals(chute)){
-				j = 1;
-				break;
-			}
-		}	
-		if(j == 1)
-			return true;
-		else
-			return false;
-	}
-	
+			
 	public GerenciadorDeAnagramas getGerenciaAnagramas() {
 		return gerenciaAnagramas;
 	}
@@ -94,11 +84,7 @@ public class GerenciadorDeJogos {
 
 	public List<Palavra> getPalavras() {
 		return palavras;
-	}
-	
-	
-	
-	
+	}	
 }
 	
 

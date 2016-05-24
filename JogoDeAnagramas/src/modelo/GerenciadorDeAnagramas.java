@@ -1,5 +1,7 @@
 package modelo;
 
+import interfaces.EstrategiaGameSet;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
@@ -65,7 +67,6 @@ public class GerenciadorDeAnagramas {
 			return jogos.get(0);			
 		}
 		else
-			return jogos.get(i);
-		
+			return jogos.get(i);		
 	}
 }
