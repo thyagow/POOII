@@ -22,14 +22,19 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import interfaces.EstrategiaGameSet;
+import modelo.FabricaEstrategia;
+import modelo.GerenciadorDeJogos;
 import modelo.Palavra;
 import modelo.PalavraCom3Letras;
 import modelo.PalavraCom4Letras;
 import modelo.PalavraCom5Letras;
 import modelo.PalavraCom6Letras;
+import modelo.FabricaEstrategia.TiposEstrategia;
 
 public class JanelaJogo extends JFrame {
 	
+	private JanelaJogo janela;
 	private JTextField put;
 	private JTextField putChute;
 	private List<JTextField> listaDeEspacos;
@@ -38,20 +43,26 @@ public class JanelaJogo extends JFrame {
 	private JLabel texto;
 	private List<Palavra> palavras;
 	private boolean resp;
+	private int numPalavras;
+	private int cont;
 	
-	public JanelaJogo(int numPalavras, List<Palavra> palavras) {				
-		this.palavras = new ArrayList<Palavra>(palavras);
+	public JanelaJogo() {				
 		listaDeEspacos = new ArrayList<JTextField>();
-		listaDeBotoes = new ArrayList<JButton>();
+		listaDeBotoes = new ArrayList<JButton>();		
 	}
 	
 	public void criaJanelaBotoesEstrategia() {
 		setLayout(null);
+		this.setTitle("Seletor de Set de Jogo");
 		criaBotoes();
 		configuraJanela();
 	}
 
 	private void criaBotoes() {	
+		texto = new JLabel("Escolha um Set de palavras para começar.");
+		texto.setSize(300, 50);
+		texto.setLocation(130, 50);
+		getContentPane().add(texto);
 		botao1();
 		botao2();
 		botao3();
@@ -66,8 +77,9 @@ public class JanelaJogo extends JFrame {
 	private void botao9() {
 		chute = new JButton("Jogo 9");
 		chute.setSize(100, 50);
-		chute.setLocation(290, 650);
+		chute.setLocation(290, 520);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo9());
 		getContentPane().add(chute);
 	}
 
@@ -76,6 +88,7 @@ public class JanelaJogo extends JFrame {
 		chute.setSize(100, 50);
 		chute.setLocation(290, 450);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo8());
 		getContentPane().add(chute);		
 	}
 
@@ -84,22 +97,25 @@ public class JanelaJogo extends JFrame {
 		chute.setSize(100, 50);
 		chute.setLocation(290, 250);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo7());
 		getContentPane().add(chute);		
 	}
 
 	private void botao6() {
 		chute = new JButton("Jogo 6");
 		chute.setSize(100, 50);
-		chute.setLocation(290, 50);
+		chute.setLocation(290, 180);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo6());
 		getContentPane().add(chute);		
 	}
 
 	private void botao5() {
 		chute = new JButton("Jogo 5");
 		chute.setSize(100, 50);
-		chute.setLocation(110, 650);
+		chute.setLocation(110, 520);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo5());
 		getContentPane().add(chute);		
 	}
 
@@ -108,6 +124,7 @@ public class JanelaJogo extends JFrame {
 		chute.setSize(100, 50);
 		chute.setLocation(110, 450);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo4());
 		getContentPane().add(chute);		
 	}
 
@@ -116,14 +133,16 @@ public class JanelaJogo extends JFrame {
 		chute.setSize(100, 50);
 		chute.setLocation(110, 250);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo3());
 		getContentPane().add(chute);		
 	}
 
 	private void botao2() {
 		chute = new JButton("Jogo 2");
 		chute.setSize(100, 50);
-		chute.setLocation(110, 50);
+		chute.setLocation(110, 180);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo2());
 		getContentPane().add(chute);		
 	}
 
@@ -132,11 +151,14 @@ public class JanelaJogo extends JFrame {
 		chute.setSize(100, 50);
 		chute.setLocation(200, 350);
 		listaDeBotoes.add(chute);
+		chute.addActionListener(new TrataBotaoJogo1());
 		getContentPane().add(chute);		
-	}
+	}	
+	
 
 	public void criaJanelaJogo(List<Palavra> palavras) {
-		setLayout(null);		
+		setLayout(null);
+		this.setTitle("Jogo de Anagramas");
 		criaEtiqueta(palavras);
 		criaAreasDeTextoNaoDigitavel();
 		criaCaixaDeTexto();		
@@ -200,7 +222,7 @@ public class JanelaJogo extends JFrame {
 		}
 	}
 	
-	private void criaAreasDireita(int AuxH) {
+	private void criaAreasDireita(int AuxH) {		
 		for (int j = 0; j < palavras.size() / 2; j++) {
 			AuxH += 50;
 			put = new JTextField();
@@ -213,7 +235,7 @@ public class JanelaJogo extends JFrame {
 		}		
 	}
 
-	private void criaAreasEsquerda(int AuxH) {
+	private void criaAreasEsquerda(int AuxH) {		
 		for (int j = 0; j < palavras.size() / 2; j++) {
 			AuxH += 50;
 			put = new JTextField();
@@ -225,8 +247,8 @@ public class JanelaJogo extends JFrame {
 			listaDeEspacos.add(put);
 		}		
 	}
-	
-private class TrataBotaoDeChute implements ActionListener {		
+//-------------------------------------------TRATAMENTOS DE BOTAO------------------------------------
+private class TrataCaixaDeChute implements ActionListener {		
 	
 	public void actionPerformed(ActionEvent e) {			
 		for (int i = 0; i < palavras.size(); i++) {
@@ -237,28 +259,218 @@ private class TrataBotaoDeChute implements ActionListener {
 				break;
 			}
 		}	
-		if(getContentPane().getComponentAt(220, 150) == texto)
-			getContentPane().remove(texto);
-	
+		if(resp == true)
+			cont++;
+		
 		if(resp == false){
 			JOptionPane.showMessageDialog(null, "Você Errou. Continue Tentando!");
 		}
+		if(cont == palavras.size()){
+			JOptionPane.showMessageDialog(null, "Parabéns. Você Venceu!");
+			dispose();
+		}			
 	}
 }
 
+public class TrataBotaoJogo1 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo1);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);	
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo2 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo2);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo3 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo3);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo4 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo4);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo5 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo5);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();	
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo6 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo6);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);	
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo7 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo7);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);	
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo8 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo8);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+
+public class TrataBotaoJogo9 implements ActionListener {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {		
+		JanelaJogo janela = new JanelaJogo();
+		FabricaEstrategia fabrica = new FabricaEstrategia();
+		EstrategiaGameSet est = fabrica.retornaEstrategia(TiposEstrategia.Jogo9);	
+		GerenciadorDeJogos gerenciador = new GerenciadorDeJogos();
+		gerenciador.criaListaDePalavras(est);
+		gerenciador.OrdenaPalavras();
+		int NumPalavras = gerenciador.getNumPalavras();
+		List <Palavra> palavras = gerenciador.getPalavras();
+		janela.setNumPalavras(NumPalavras);
+		janela.setPalavras(palavras);
+		dispose();
+		janela.criaJanelaJogo(palavras);
+	}
+
+}
+//-------------------------------------------------------------------------------------------------
 	private void criaCaixaDeTexto() {
 		putChute = new JTextField();
 		putChute.setSize(100, 30);
 		putChute.setLocation(190, 100);		
 		getContentPane().add(putChute);
-		putChute.addActionListener(new TrataBotaoDeChute());
+		putChute.addActionListener(new TrataCaixaDeChute());
 	}
 	
-	private void configuraJanela() {		
-		this.setTitle("Jogo de Anagramas");	
+	private void configuraJanela() {				
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		this.setSize(500, 800);
 		this.setLocation(420, 50);
 		this.setVisible(true);		
 	}
+
+	public void setPalavras(List<Palavra> palavras) {
+		this.palavras = palavras;
+	}
+	public void setNumPalavras(int numPalavras) {
+		this.numPalavras = numPalavras;
+	}	
 }

@@ -10,8 +10,8 @@ public class Jogo4 implements EstrategiaGameSet {
 	private List<String> jogoNum4;
 	
 	public Jogo4() {
-		 this.jogoNum4 = new ArrayList<String>(Arrays.asList("enjoar", "enojar", "ranjo", "arejo", "reajo", "rena", "anjo",
-				     "nora", "orna", "jean", "ore", "roe", "aro", "ano", "não", "era", "roa"));
+		 this.jogoNum4 = new ArrayList<String>(Arrays.asList("atires", "estira", "estria", "atire", "seria", "reais", "iates",
+				     "seita", "sair", "teia", "tira", "arte", "trai", "reta", "tear", "ares", "ter", "ser", "sei", "rei"));
 	}
 	
 	public List pegaJogo() {		

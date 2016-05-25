@@ -11,8 +11,8 @@ public class Jogo2 implements EstrategiaGameSet {
 	
 	
 	public Jogo2() {
-		this.jogoNum2 = new ArrayList<String>(Arrays.asList("gradua", "guarda", "gruda", "aguar", "argua", "ardua", "aguda", "draga", "agar",
-			     "arda", "grau", "ruga", "dura", "aura", "agua", "rua", "grã", "dar", "ara"));
+		this.jogoNum2 = new ArrayList<String>(Arrays.asList("alarme", "ramela", "melara", "leram", "melar", "ralem", "aguda", "draga", "agar",
+			     "ralam", "arame", "areal", "mela", "amar", "lama", "mala", "alma", "arma", "lema", "real"));
 	}
 	
 	public List pegaJogo() {		

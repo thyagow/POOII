@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="modelo.Palavra" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/Palavra.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1829" y="412"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="modelo.FabricaEstrategia" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/FabricaEstrategia.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2491" y="88"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="modelo.PalavraCom3Letras" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/PalavraCom3Letras.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1689" y="635"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="modelo.PalavraCom5Letras" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/PalavraCom5Letras.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1895" y="673"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="modelo.GerenciadorDeJogos" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/GerenciadorDeJogos.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1503" y="298"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="interfaces.EstrategiaGameSet" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/interfaces/EstrategiaGameSet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2642" y="367"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="estrategias.Jogo2" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2791" y="127"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="visao.JanelaJogo.TrataBotaoJogo9" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="162" y="70"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="estrategias.Jogo1" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2955" y="138"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="visao.JanelaJogo.TrataBotaoJogo8" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="155" y="273"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="visao.JanelaJogo.TrataBotaoJogo7" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="140" y="402"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="visao.JanelaJogo.TrataBotaoJogo6" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="134" y="553"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="estrategias.Jogo6" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo6.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3046" y="275"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="modelo.PalavraCom4Letras" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/PalavraCom4Letras.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2165" y="717"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="estrategias.Jogo5" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo5.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3045" y="414"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="estrategias.Jogo4" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo4.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3055" y="549"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="estrategias.Jogo3" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3010" y="677"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="visao.JanelaJogo.TrataBotaoJogo1" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="136" y="691"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="estrategias.Jogo9" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo9.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2832" y="736"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="modelo.PalavraCom6Letras" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/PalavraCom6Letras.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2205" y="480"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="estrategias.Jogo8" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo8.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2656" y="729"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="estrategias.Jogo7" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/estrategias/Jogo7.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2490" y="744"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="visao.JanelaJogo.TrataBotaoJogo5" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="578" y="765"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="visao.JanelaJogo.TrataBotaoJogo4" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1001" y="764"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="visao.JanelaJogo.TrataCaixaDeChute" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="794" y="767"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="visao.JanelaJogo.TrataBotaoJogo3" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="359" y="758"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="visao.JanelaJogo" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="602" y="307"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="visao.JanelaJogo.TrataBotaoJogo2" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/visao/JanelaJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1208" y="689"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="controle.ExecutarJogo" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/controle/ExecutarJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1493" y="79"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="30" language="java" name="modelo.FabricaEstrategia.TiposEstrategia" project="JogoDeAnagramas" 
+    file="/JogoDeAnagramas/src/modelo/FabricaEstrategia.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2400" y="307"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <association id="31">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="32" name="palavras"/>      
+      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="34">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="18"/>  
+  </nesting>  
+  <realization id="35">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="36">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="37" name="janela"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="39">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <nesting id="40">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="24"/>  
+  </nesting>  
+  <nesting id="41">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <association id="42">    
+    <bendpoint x="1650" y="449"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="43" name="palavra">        
+        <position height="18" width="44" x="1786" y="307"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="46">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="47" name="fabrica"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="49">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="50">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="51">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="52">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="53" name="janela"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <nesting id="56">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="11"/>  
+  </nesting>  
+  <nesting id="57">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="30"/>  
+  </nesting>  
+  <nesting id="58">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="26"/>  
+  </nesting>  
+  <nesting id="59">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <association id="60">    
+    <bendpoint x="1442" y="577"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="61" name="palavras"/>      
+      <multiplicity id="62" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="63">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="64">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="65">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <nesting id="66">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <association id="67">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="68" name="mapaTipoEstrategia"/>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="72">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="73">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <nesting id="74">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="28"/>  
+  </nesting>  
+  <nesting id="75">    
+    <bendpoint x="801" y="636"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="25"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

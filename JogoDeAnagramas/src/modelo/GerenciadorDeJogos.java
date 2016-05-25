@@ -10,19 +10,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 import visao.JanelaJogo;
-import excecoes.ExcecaoPalavraErrada;
 
 public class GerenciadorDeJogos {
-
-	private GerenciadorDeAnagramas gerenciaAnagramas;
+	
 	private List<Palavra> palavras;	
 	private Palavra palavra;
 	private String letras;	
 	private JanelaJogo janela;
 
-	public GerenciadorDeJogos() {
-		gerenciaAnagramas = new GerenciadorDeAnagramas();		
+	public GerenciadorDeJogos() {		
 		palavras = new ArrayList<Palavra>();		
+	}
+	
+	public void soParaTestesComOArray(Palavra palavra) {
+		//String salveiAux = palavras.get(0).getPalavra();
+		//palavras.remove(0);
+		Palavra levaisAux = palavras.get(2);
+		palavras.remove(2);
+		palavras.add(palavra);		
+	}
+	
+	public void OrdenaPalavras() {		
+		Palavra palavra = null;
+		Palavra palavra2 = null;
+		Palavra palavra3 = null;		
+		for (int i = (palavras.size() - 1); i >= 0; i--) {
+			palavra = palavras.get(i);
+			palavras.remove(i);
+			palavras.add(palavra);			
+		}		
 	}
 	
 	public void criaListaDePalavras(EstrategiaGameSet estrategia) {
@@ -64,11 +80,7 @@ public class GerenciadorDeJogos {
 			
 			System.out.println("- " + palavras.get(i).toString() + ".");
 		}		
-	}
-			
-	public GerenciadorDeAnagramas getGerenciaAnagramas() {
-		return gerenciaAnagramas;
-	}
+	}	
 
 	public int getNumPalavras() {
 		return palavras.size();
