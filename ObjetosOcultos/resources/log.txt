@@ -1,0 +1,20 @@
+
+ 
+
+RESUMO DO PROJETO:
+08/06/2016;
+  -O meu objetivo com o caça objetos é fazer uma pequena trama, se eu conseguir a tempo,
+e talvez criar os cenarios eu mesmo, com o tempo verei se consigo fazer como estou planejando.
+
+12/06/2016;
+  -Minha nova adição ao projeto foi basicamente uma ideia nova pra fazer um jogo um pouco mais complexo,
+com a possibilidade de se movimentar entre cenários e interação de objetos com locais dos próprios (EX: chave e porta).
+Com certeza adoraria fazer funcionar, e vou começar a pensar nos cenários em si. 
+
+15/06/2016;
+  -Fiz um pequeno teste com JFrame para ter algo "executável" nessa postagem, se bem que pequeno para interface gráfica dá
+bastante código a ser escrito, então foi basicamente a aplicação do que eu já tinha na janela do jogo.
+
+19/06/2016;
+  -Adicionei dois cenários com mais objetos e implementei eles na interface gráfica, agora também terá um menu aonde você
+poderá escolher o cenário que quer jogar, ou pode ver o ranking de jogadores(NÃO foi adicionado ainda).
